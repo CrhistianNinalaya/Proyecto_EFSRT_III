@@ -1,0 +1,85 @@
+.chats{
+    max-height: 75vh;
+
+}
+
+.vh-mensajes{
+    height: 65vh;
+}
+.chatea{
+    max-height: 53vh;
+    overflow: auto;
+}
+
+.persiste-web{
+    position: sticky;
+    top: 0;
+}
+
+.scrollbar-cibertec{
+    scrollbar-color: #004266 black;
+    scrollbar-width: thin;
+}
+.bg-cibertec-reverse{
+    background-color: white;
+    color: #004266;
+}
+
+.bg-cibertec{
+    background-color: #004266;
+}
+.btn-cibertec{
+    background-color: #004266;
+    color: white;
+    width: 100%;    
+}
+
+.btn-send{
+    width: 120%;
+    height: 90%;
+}
+
+.btn-cibertec:hover{
+    background-color: white;
+    color: #004266;
+    
+}
+
+/**************************/
+
+.chat-bubble {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.chat-avatar img {
+    width: 40px;
+    /* Ajusta el tamaño según necesites */
+    height: 40px;
+    /* Ajusta el tamaño según necesites */
+    border-radius: 50%;
+    /* Hace la imagen circular */
+}
+
+.chat-content {
+    background-color: #004266;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.chat-time {
+    display: block;
+    text-align: right;
+    color: #a1a1a1;
+    font-size: 0.8em;
+}
+
+.vh-100{
+    width: 100vh;
+}
+.textarea-margenes{
+
+    width: 110vh;
+}
