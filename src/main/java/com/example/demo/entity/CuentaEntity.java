@@ -41,7 +41,7 @@ public class CuentaEntity implements Serializable{
 	@Column(name="password", nullable = false, columnDefinition = "CHAR(6)")
 	private String contraseña;
 	
-	@Column(name="correo", nullable = false, columnDefinition = "VARCHAR(20)",unique = true)
+	@Column(name="correo", nullable = false, columnDefinition = "VARCHAR(50)",unique = true)
 	private String correo;
 	
 	@ManyToOne

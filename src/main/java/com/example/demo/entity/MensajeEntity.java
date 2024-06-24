@@ -35,5 +35,9 @@ public class MensajeEntity implements Serializable{
 	@JoinColumn(name="cod_chat", nullable= false)
 	private ChatEntity chat;
 	
+	@ManyToOne
+	@JoinColumn(name = "cod_usuario", nullable = false)
+	private CuentaEntity cuenta;
+	
 
 }
