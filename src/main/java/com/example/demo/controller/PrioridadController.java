@@ -31,7 +31,7 @@ public class PrioridadController {
 		List<ChatEntity> lstChat = chatRepository.findAll();
 		model.addAttribute("lstChat",lstChat);
 		
-		return "chat";
+		return "views/chat";
 	}
 
 }
