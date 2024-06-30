@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +13,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name="tb_mensaje")
 public class MensajeEntity implements Serializable{
 	/**
@@ -28,8 +38,8 @@ public class MensajeEntity implements Serializable{
 	@Column(name="contenido", nullable = false)
 	private String contenido;
 	
-	@Column(name="fec_mensaje", nullable = false, columnDefinition = "DATE")
-	private LocalDate fecMensaje;
+	@Column(name="fec_mensaje", nullable = false, columnDefinition = "DATETIME")
+	private LocalDateTime fecMensaje;
 	
 	@ManyToOne
 	@JoinColumn(name="cod_chat", nullable= false)

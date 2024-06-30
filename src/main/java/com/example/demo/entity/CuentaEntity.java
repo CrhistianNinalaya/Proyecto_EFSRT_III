@@ -39,7 +39,7 @@ public class CuentaEntity implements Serializable{
 	private String apeUsuario;
 	
 	@Column(name="password", nullable = false, columnDefinition = "CHAR(6)")
-	private String contraseña;
+	private String password;
 	
 	@Column(name="correo", nullable = false, columnDefinition = "VARCHAR(50)",unique = true)
 	private String correo;
