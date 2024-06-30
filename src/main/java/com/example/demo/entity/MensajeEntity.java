@@ -35,6 +35,7 @@ public class MensajeEntity implements Serializable{
 	@Column(name="cod_mensaje", nullable = false, unique = true)
 	private Integer codMensaje;
 	
+	
 	@Column(name="contenido", nullable = false)
 	private String contenido;
 	

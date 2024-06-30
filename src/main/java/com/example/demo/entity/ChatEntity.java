@@ -29,6 +29,9 @@ public class ChatEntity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cod_chat", nullable = false, unique = true)
 	private Integer codChat;
+	
+	@Column(name="asunto", nullable = false)
+	private String asunto;
 
 	@Column(name = "fec_inicio", nullable = false, columnDefinition = "DATE")
 	private LocalDate fecInicio;
