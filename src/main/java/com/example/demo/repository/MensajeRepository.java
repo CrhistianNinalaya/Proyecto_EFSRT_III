@@ -9,6 +9,5 @@ import com.example.demo.entity.MensajeEntity;
 
 @Repository
 public interface MensajeRepository extends JpaRepository<MensajeEntity, Integer>{
-	List<MensajeEntity> findAllByChat_CodChat(Integer codChat);
-	
+	List<MensajeEntity> findAllByChat_CodChat(Integer codChat);	
 }
