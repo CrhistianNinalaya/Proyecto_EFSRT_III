@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-import java.io.Serializable;
+
 
 import java.time.LocalDateTime;
 
@@ -13,24 +13,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
 @Table(name="tb_mensaje")
-public class MensajeEntity implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class MensajeEntity {
+
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,6 +39,65 @@ public class MensajeEntity implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "cod_usuario", nullable = false)
 	private CuentaEntity cuenta;
+
+	public Integer getCodMensaje() {
+		return codMensaje;
+	}
+
+	public void setCodMensaje(Integer codMensaje) {
+		this.codMensaje = codMensaje;
+	}
+
+	public String getContenido() {
+		return contenido;
+	}
+
+	public void setContenido(String contenido) {
+		this.contenido = contenido;
+	}
+
+	public LocalDateTime getFecMensaje() {
+		return fecMensaje;
+	}
+
+	public void setFecMensaje(LocalDateTime fecMensaje) {
+		this.fecMensaje = fecMensaje;
+	}
+
+	public ChatEntity getChat() {
+		return chat;
+	}
+
+	public void setChat(ChatEntity chat) {
+		this.chat = chat;
+	}
+
+	public CuentaEntity getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(CuentaEntity cuenta) {
+		this.cuenta = cuenta;
+	}
+
+	public MensajeEntity(Integer codMensaje, String contenido, LocalDateTime fecMensaje, ChatEntity chat,
+			CuentaEntity cuenta) {
+		this.codMensaje = codMensaje;
+		this.contenido = contenido;
+		this.fecMensaje = fecMensaje;
+		this.chat = chat;
+		this.cuenta = cuenta;
+	}
+
+	public MensajeEntity() {
+	}
+
+	@Override
+	public String toString() {
+		return "MensajeEntity [codMensaje=" + codMensaje + ", contenido=" + contenido + ", fecMensaje=" + fecMensaje
+				+ ", chat=" + chat + ", cuenta=" + cuenta + "]";
+	}
+	
 	
 
 }
