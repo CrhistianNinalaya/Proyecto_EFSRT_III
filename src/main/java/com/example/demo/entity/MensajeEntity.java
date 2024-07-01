@@ -1,7 +1,7 @@
 package com.example.demo.entity;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -17,12 +17,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Table(name="tb_mensaje")
 public class MensajeEntity implements Serializable{
 	/**

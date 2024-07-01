@@ -105,7 +105,11 @@
 
 						<form th:action="@{/registrar_mensaje}" th:object="${mensaje}" method="post" class="d-flex">
 							<div>
-								<textarea class="textarea-margenes form-control mt-1" id="autoresizing"
+								<input th:field="*{codMensaje}" type="hidden"></input> 
+								<input th:field="*{chat.codChat}" type="hidden"></input>
+								<input th:field="*{cuenta.codUsuario}" type="hidden"></input>  
+								<textarea name="contenido"
+								class="textarea-margenes form-control mt-1" id="autoresizing"
 									placeholder="Escribe tu mensaje aqui"></textarea>
 							</div>
 							<div>
@@ -120,6 +124,7 @@
 							</div>
 						</form>
 					</article>
+					</section>
 			</div>
 		</div>
 
