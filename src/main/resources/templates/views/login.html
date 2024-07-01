@@ -10,14 +10,24 @@
 	rel="stylesheet"
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 	crossorigin="anonymous">
+	<link rel="stylesheet" th:href="@{/assets/css/style.css}" />
 </head>
 
-<body class="bg-dark text-light">
-	<!-- d-flex align-items-center py-4  -->
+<body class="bg-dark text-light scrollbar-cibertec">	
 	
+	<div th:if="${sessionUsuario !=null}">
+		<div th:if="${sessionUsuario.tipo.codTipo == 1}">
+			<nav th:replace="views_partials/navbar1 :: navbar-content"></nav>
+		</div>
+		<div th:if="${sessionUsuario.tipo.codTipo == 2}">
+			<nav th:replace="views_partials/navbar2 :: navbar-content"></nav>
+		</div>
 
-	
-    <nav th:replace="views_partials/navbar0 :: navbar-content"></nav>
+	</div>
+	<div th:if="${sessionUsuario ==null}">
+		<nav th:replace="views_partials/navbar0 :: navbar-content"></nav>
+
+	</div>
 	<main class="form-signin w-100 m-auto">
 
 		<section class="offset-4 col-4">
@@ -50,13 +60,7 @@
 		</section>
 	</main>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	
 	<footer th:replace="views_partials/footer :: footer-content"></footer>
 
 

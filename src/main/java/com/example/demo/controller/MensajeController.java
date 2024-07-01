@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.entity.CategoriaEntity;
+
 import com.example.demo.entity.ChatEntity;
 import com.example.demo.entity.CuentaEntity;
 import com.example.demo.entity.MensajeEntity;
 import com.example.demo.entity.PrioridadEntity;
-import com.example.demo.repository.CategoriaRepository;
+
 import com.example.demo.repository.ChatRepository;
 import com.example.demo.repository.MensajeRepository;
 import com.example.demo.repository.PrioridadRepository;
@@ -47,12 +47,12 @@ public class MensajeController {
 		model.addAttribute("mensaje", new MensajeEntity());
 
 		Integer codPrioridad = (Integer) session.getAttribute("codPrioridad");
-		System.out.println("Desde get showChat " + codPrioridad);
+//		System.out.println("Desde get showChat " + codPrioridad);
 
 		if (codPrioridad == null) {
 			List<ChatEntity> lstChat = chatRepository.findAll();
 			model.addAttribute("lstChat", lstChat);
-			System.out.println(lstChat.get(0).getPrioridad().getNombre());
+//			System.out.println(lstChat.get(0).getPrioridad().getNombre());
 		}
 
 //		List<MensajeEntity> lstMensajes= mensajeRepository.findAll();
@@ -68,14 +68,14 @@ public class MensajeController {
 		        int ULTIMO = mensajesPorFiltro.size() - 1;
 		        MensajeEntity mensajePrimero = mensajesPorFiltro.get(ULTIMO);
 
-		        System.out.println("********************************");
-		        System.out.println("Desde el get: " + mensajesPorFiltro.get(0).toString());
-		        System.out.println("Desde el get: " + mensajesPorFiltro.get(0).getChat().getCodChat());
+//		        System.out.println("********************************");
+//		        System.out.println("Desde el get: " + mensajesPorFiltro.get(0).toString());
+//		        System.out.println("Desde el get: " + mensajesPorFiltro.get(0).getChat().getCodChat());
 
 		        model.addAttribute("mensaje", mensajePrimero);
 		        
-		        System.out.println("DESDE EL GET***************************");
-		        System.out.println(mensajePrimero.toString());
+//		        System.out.println("DESDE EL GET***************************");
+//		        System.out.println(mensajePrimero.toString());
 		    } else {
 		        // Si la lista está vacía, crea un mensaje vacío
 		        Optional<ChatEntity> chatBuscadoPorId = chatRepository.findById(codChat);
@@ -86,17 +86,15 @@ public class MensajeController {
 		        CuentaEntity usuario = (CuentaEntity)session.getAttribute("usuario");
 		        nuevoMensaje.setCuenta(usuario);
 		        model.addAttribute("mensaje", nuevoMensaje);
-		        System.out.println("DESDE EL GET***************************");
-		        System.out.println(nuevoMensaje.toString());
+//		        System.out.println("DESDE EL GET***************************");
+//		        System.out.println(nuevoMensaje.toString());
 		    }
-
 		}
-
 		
 		if (codPrioridad != null) {
 			
 			List<ChatEntity> lstChat = chatRepository.findAllByPrioridad_CodPrioridad(codPrioridad);
-			System.out.println("Desde el momento en que codPrioridad no es NULL "+lstChat.get(0).getPrioridad().getCodPrioridad());
+//			System.out.println("Desde el momento en que codPrioridad no es NULL "+lstChat.get(0).getPrioridad().getCodPrioridad());
 			model.addAttribute("lstChat", lstChat);
 		}
 
@@ -110,7 +108,7 @@ public class MensajeController {
 			model.addAttribute("sessionUsuario", usuario);
 			model.addAttribute("sessionCodUsu", usuario.getCodUsuario());
 
-			System.out.println(usuario.getTipo().getCodTipo());
+//			System.out.println(usuario.getTipo().getCodTipo());
 		}
 		return "views/chat";
 	}
@@ -129,7 +127,7 @@ public class MensajeController {
     		@RequestParam("contenido")String contenido){
 					
 
-		System.out.println("CODMENSAJE:"+mensaje.getChat().getCodChat());
+//		System.out.println("CODMENSAJE:"+mensaje.getChat().getCodChat());
 		
 		
 		
@@ -142,19 +140,19 @@ public class MensajeController {
 		}
 		mensaje.setContenido(contenido);
 		
-		System.out.println("*******************************************");
-		System.out.println("DESDE EL POST");
-		System.out.println(mensaje.toString());
-		
-		System.out.println("*******************************************");
+//		System.out.println("*******************************************");
+//		System.out.println("DESDE EL POST");
+//		System.out.println(mensaje.toString());
+//		
+//		System.out.println("*******************************************");
 		
         CuentaEntity cuentaEncontrada = (CuentaEntity) session.getAttribute("usuario");
         
         System.out.println(mensaje.toString());
         if(cuentaEncontrada !=null) {
-        	System.out.println("DEsde el post");
-        	System.out.println(cuentaEncontrada.toString());
-        	System.out.println("*******************************************");        
+//        	System.out.println("DEsde el post");
+//        	System.out.println(cuentaEncontrada.toString());
+//        	System.out.println("*******************************************");        
         }
 //        MensajeEntity nuevomensaje = new MensajeEntity();                    
 //        
