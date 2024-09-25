@@ -1,0 +1,18 @@
+<article th:fragment="bandeja-mensaje" 
+	class="overflow-auto vh-mensajes">
+	
+	
+	<div th:if="${codChat!=null}" class="chat-container">
+		<div class="chat-wrapper" th:each="mensaje : ${lstMensajes}">
+
+			<div
+				th:class="${mensaje.cuenta.codUsuario == sessionCodUsu} ? 'chat-bubble outgoing bg-cibertec' : 'chat-bubble incoming'">
+				<p th:text="${mensaje.contenido}"></p>
+				<span th:text="${#temporals.format(mensaje.fecMensaje, 'hh:mm a')}"></span>
+			</div>
+		</div>
+	</div>
+	<div th:if="${codChat == null}"class="chat-container">
+		<div class="chat-wrapper">Seleccione uno de los mensajes de la bandeja</div>
+	</div>
+</article>
